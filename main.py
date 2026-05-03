@@ -1,9 +1,10 @@
+from random import shuffle
 from data import questions
 
-def format_data(questions):
-    data_q = questions['question']
-    data_a = questions['a']
-    data_b = questions['b']
+def format_data(question):
+    data_q = question['question']
+    data_a = question['a']
+    data_b = question['b']
 
     return f'{data_q}\na) {data_a}\nb) {data_b}'
 
@@ -13,7 +14,7 @@ def check_answer(answer, c_answer):
 score = 0
 lives = 5
 
-
+shuffle(questions)
 
 for question in questions:
     print(format_data(question))
